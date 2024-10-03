@@ -37,6 +37,7 @@
             // 
             // selectedVaultFilePathTextBox
             // 
+            this.selectedVaultFilePathTextBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.selectedVaultFilePathTextBox.Location = new System.Drawing.Point(12, 12);
             this.selectedVaultFilePathTextBox.Multiline = true;
             this.selectedVaultFilePathTextBox.Name = "selectedVaultFilePathTextBox";
@@ -60,16 +61,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(106, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 15);
+            this.label2.Size = new System.Drawing.Size(177, 15);
             this.label2.TabIndex = 16;
             this.label2.Text = "Enter Imported Vault Credentials";
             // 
             // vaultPasswordTextBox
             // 
-            this.vaultPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.vaultPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.vaultPasswordTextBox.Location = new System.Drawing.Point(12, 79);
             this.vaultPasswordTextBox.Name = "vaultPasswordTextBox";
             this.vaultPasswordTextBox.Size = new System.Drawing.Size(329, 23);
@@ -78,6 +79,7 @@
             // 
             // loginButton
             // 
+            this.loginButton.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.loginButton.Location = new System.Drawing.Point(119, 108);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(154, 23);
@@ -96,6 +98,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.vaultPasswordTextBox);
             this.Controls.Add(this.selectedVaultFilePathTextBox);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Import";

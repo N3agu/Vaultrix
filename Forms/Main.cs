@@ -99,7 +99,7 @@ namespace Vaultrix {
 
             if (createEntry.ShowDialog() == DialogResult.OK) {
                 // get data from the form
-                string lastModifiedDate = DateTime.Today.ToString();
+                string lastModifiedDate = DateTime.Now.ToString();
                 string websiteName = createEntry.WebsiteName;
                 string emailUsername = createEntry.EmailUsername;
                 string password = createEntry.Password;
@@ -117,10 +117,10 @@ namespace Vaultrix {
                 ListViewItem newEntryItem = null;
                 if (!string.IsNullOrEmpty(password)) { 
                     newEntryItem = new ListViewItem(new[] { lastModifiedDate, websiteName, emailUsername, Utils.PasswordReplace, url, details });
-                    newEntryItem.Tag = new { Password = password };
                 } else 
                     newEntryItem = new ListViewItem(new[] { lastModifiedDate, websiteName, emailUsername, password, url, details });
                 
+                newEntryItem.Tag = new { Password = password };
                 entriesListView.Items.Add(newEntryItem);
                 allItemsList.Add(newEntryItem);
 
@@ -175,13 +175,14 @@ namespace Vaultrix {
             modifyEntry.WebsiteName = selectedItem.SubItems[1].Text;
             modifyEntry.EmailUsername = selectedItem.SubItems[2].Text;
             dynamic selectedItemTag = selectedItem.Tag;
-            modifyEntry.Password = selectedItemTag.Password;
+            if(selectedItemTag != null)
+                modifyEntry.Password = selectedItemTag.Password;
             modifyEntry.Url = selectedItem.SubItems[4].Text;
             modifyEntry.Details = selectedItem.SubItems[5].Text;
 
             if (modifyEntry.ShowDialog() == DialogResult.OK) {
                 // update the selected ListView item with new values
-                selectedItem.SubItems[0].Text = DateTime.Today.ToString();
+                selectedItem.SubItems[0].Text = DateTime.Now.ToString();
                 selectedItem.SubItems[1].Text = modifyEntry.WebsiteName;
                 selectedItem.SubItems[2].Text = modifyEntry.EmailUsername;
                 selectedItem.SubItems[4].Text = modifyEntry.Url;
@@ -199,6 +200,12 @@ namespace Vaultrix {
 
                     selectedItem.Tag = new { Password = modifyEntry.Password };
                     originalItem.Tag = new { Password = modifyEntry.Password };
+                } else
+                {
+                    selectedItem.SubItems[3].Text = "";
+                    originalItem.SubItems[3].Text = "";
+                    selectedItem.Tag = new { Password = "" };
+                    originalItem.Tag = new { Password = "" };
                 }
 
                 AdjustListViewColumnWidths();
@@ -438,6 +445,10 @@ namespace Vaultrix {
             ListViewItem selectedItem = entriesListView.SelectedItems[0];
             if (selectedItem.SubItems[3].Text == Utils.PasswordReplace) rightClickSingleContextMenu.Items[2].Text = "Show Password";
             else rightClickSingleContextMenu.Items[2].Text = "Hide Password";
+        }
+
+        private void githubPageLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            System.Diagnostics.Process.Start("https://github.com/N3agu/Vaultrix");
         }
 
         private void exportButton_Click(object sender, EventArgs e) {

@@ -12,7 +12,7 @@ namespace Vaultrix.Helpers {
             
             string saltPlusHash = Convert.ToBase64String(salt) + ":" + hashedPassword;
 
-            // Encrypt (DPAPI)
+            // encrypt (DPAPI)
             byte[] protectedData = ProtectedData.Protect(Encoding.UTF8.GetBytes(saltPlusHash), null, DataProtectionScope.CurrentUser);
 
             File.WriteAllBytes(keyFilePath, protectedData);
@@ -22,7 +22,7 @@ namespace Vaultrix.Helpers {
         public static bool ValidatePassword(string enteredPassword, string keyFilePath) {
             byte[] protectedData = File.ReadAllBytes(keyFilePath);
 
-            // Decrypt (DPAPI)
+            // decrypt (DPAPI)
             byte[] unprotectedData = ProtectedData.Unprotect(protectedData, null, DataProtectionScope.CurrentUser);
 
             string saltPlusHash = Encoding.UTF8.GetString(unprotectedData);
@@ -36,7 +36,7 @@ namespace Vaultrix.Helpers {
 
             string enteredHashedPassword = HashPasswordWithSalt(enteredPassword, storedSalt);
 
-            // Compare the entered hashed password with the stored one
+            // compare the entered hashed password with the stored one
             return storedHashedPassword == enteredHashedPassword;
         }
 
@@ -65,6 +65,47 @@ namespace Vaultrix.Helpers {
                 return true;
 
             return username.Any(c => invalidChars.Contains(c));
+        }
+
+        public static string GenerateStrongPassword(bool allowLetters, bool allowDigits, bool allowSymbols) {
+            const string upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+            const string digits = "0123456789";
+            const string specialChars = "!@#$%^&*_+-=";
+
+            Random random = new Random();
+
+            // empty chrcter set
+            StringBuilder availableChars = new StringBuilder();
+            StringBuilder password = new StringBuilder();
+
+            // get at least one of each required type
+            if (allowLetters) {
+                availableChars.Append(upperCaseLetters);
+                availableChars.Append(lowerCaseLetters);
+
+                // lowercase + uppercase
+                password.Append(upperCaseLetters[random.Next(upperCaseLetters.Length)]);
+                password.Append(lowerCaseLetters[random.Next(lowerCaseLetters.Length)]);
+            }
+
+            if (allowDigits) {
+                availableChars.Append(digits);
+                password.Append(digits[random.Next(digits.Length)]); // Ensure at least one digit
+            }
+
+            if (allowSymbols) {
+                availableChars.Append(specialChars);
+                password.Append(specialChars[random.Next(specialChars.Length)]); // Ensure at least one symbol
+            }
+
+            int passwordLength = random.Next(20, 26); // 20-25 characters long password
+
+            for (int i = password.Length; i < passwordLength; i++)
+                password.Append(availableChars[random.Next(availableChars.Length)]);
+
+            // shuffle the characters to avoid predictable patterns (example - uppercase always first)
+            return new string(password.ToString().OrderBy(c => random.Next()).ToArray());
         }
     }
 }

@@ -35,17 +35,22 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.linkTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.detailsTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.generateButton = new System.Windows.Forms.Button();
+            this.passwordTipsLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.allowLettersCheckBox = new System.Windows.Forms.CheckBox();
+            this.allowDigitsCheckBox = new System.Windows.Forms.CheckBox();
+            this.allowSymbolsCheckBox = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // saveEntryButton
             // 
             this.saveEntryButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.saveEntryButton.Location = new System.Drawing.Point(191, 361);
+            this.saveEntryButton.Location = new System.Drawing.Point(191, 420);
             this.saveEntryButton.Name = "saveEntryButton";
             this.saveEntryButton.Size = new System.Drawing.Size(138, 37);
             this.saveEntryButton.TabIndex = 0;
@@ -98,7 +103,7 @@
             // 
             this.linkTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkTextBox.Location = new System.Drawing.Point(12, 162);
+            this.linkTextBox.Location = new System.Drawing.Point(12, 188);
             this.linkTextBox.Multiline = true;
             this.linkTextBox.Name = "linkTextBox";
             this.linkTextBox.Size = new System.Drawing.Size(353, 21);
@@ -115,22 +120,11 @@
             this.label2.Text = "Username / Email";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Location = new System.Drawing.Point(9, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(353, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Password";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Location = new System.Drawing.Point(9, 146);
+            this.label4.Location = new System.Drawing.Point(9, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(353, 13);
             this.label4.TabIndex = 15;
@@ -141,7 +135,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Location = new System.Drawing.Point(9, 192);
+            this.label5.Location = new System.Drawing.Point(9, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(353, 13);
             this.label5.TabIndex = 17;
@@ -153,16 +147,16 @@
             this.detailsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.detailsTextBox.Location = new System.Drawing.Point(12, 208);
+            this.detailsTextBox.Location = new System.Drawing.Point(12, 237);
             this.detailsTextBox.Multiline = true;
             this.detailsTextBox.Name = "detailsTextBox";
-            this.detailsTextBox.Size = new System.Drawing.Size(353, 147);
+            this.detailsTextBox.Size = new System.Drawing.Size(353, 177);
             this.detailsTextBox.TabIndex = 16;
             // 
             // cancelButton
             // 
             this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.cancelButton.Location = new System.Drawing.Point(47, 361);
+            this.cancelButton.Location = new System.Drawing.Point(47, 420);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(138, 37);
             this.cancelButton.TabIndex = 18;
@@ -170,16 +164,93 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // generateButton
+            // 
+            this.generateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.generateButton.Location = new System.Drawing.Point(290, 143);
+            this.generateButton.Name = "generateButton";
+            this.generateButton.Size = new System.Drawing.Size(75, 23);
+            this.generateButton.TabIndex = 19;
+            this.generateButton.Text = "Generate";
+            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
+            // 
+            // passwordTipsLinkLabel
+            // 
+            this.passwordTipsLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.passwordTipsLinkLabel.Location = new System.Drawing.Point(12, 100);
+            this.passwordTipsLinkLabel.Name = "passwordTipsLinkLabel";
+            this.passwordTipsLinkLabel.Size = new System.Drawing.Size(353, 13);
+            this.passwordTipsLinkLabel.TabIndex = 20;
+            this.passwordTipsLinkLabel.TabStop = true;
+            this.passwordTipsLinkLabel.Text = "Password";
+            this.passwordTipsLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.passwordTipsLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.passwordTipsLinkLabel_LinkClicked);
+            // 
+            // allowLettersCheckBox
+            // 
+            this.allowLettersCheckBox.AutoSize = true;
+            this.allowLettersCheckBox.Checked = true;
+            this.allowLettersCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.allowLettersCheckBox.Location = new System.Drawing.Point(50, 147);
+            this.allowLettersCheckBox.Name = "allowLettersCheckBox";
+            this.allowLettersCheckBox.Size = new System.Drawing.Size(60, 17);
+            this.allowLettersCheckBox.TabIndex = 21;
+            this.allowLettersCheckBox.Text = "Letters";
+            this.allowLettersCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // allowDigitsCheckBox
+            // 
+            this.allowDigitsCheckBox.AutoSize = true;
+            this.allowDigitsCheckBox.Checked = true;
+            this.allowDigitsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.allowDigitsCheckBox.Location = new System.Drawing.Point(114, 147);
+            this.allowDigitsCheckBox.Name = "allowDigitsCheckBox";
+            this.allowDigitsCheckBox.Size = new System.Drawing.Size(56, 17);
+            this.allowDigitsCheckBox.TabIndex = 22;
+            this.allowDigitsCheckBox.Text = "Digits";
+            this.allowDigitsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // allowSymbolsCheckBox
+            // 
+            this.allowSymbolsCheckBox.AutoSize = true;
+            this.allowSymbolsCheckBox.Checked = true;
+            this.allowSymbolsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.allowSymbolsCheckBox.Location = new System.Drawing.Point(172, 147);
+            this.allowSymbolsCheckBox.Name = "allowSymbolsCheckBox";
+            this.allowSymbolsCheckBox.Size = new System.Drawing.Size(68, 17);
+            this.allowSymbolsCheckBox.TabIndex = 23;
+            this.allowSymbolsCheckBox.Text = "Symbols";
+            this.allowSymbolsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Allow:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // EntryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 410);
+            this.ClientSize = new System.Drawing.Size(377, 469);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.allowSymbolsCheckBox);
+            this.Controls.Add(this.allowDigitsCheckBox);
+            this.Controls.Add(this.allowLettersCheckBox);
+            this.Controls.Add(this.passwordTipsLinkLabel);
+            this.Controls.Add(this.generateButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.detailsTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkTextBox);
             this.Controls.Add(this.passwordTextBox);
@@ -187,6 +258,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.websiteNameTextBox);
             this.Controls.Add(this.saveEntryButton);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(393, 449);
             this.Name = "EntryView";
@@ -208,10 +280,15 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox linkTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox detailsTextBox;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button generateButton;
+        private System.Windows.Forms.LinkLabel passwordTipsLinkLabel;
+        private System.Windows.Forms.CheckBox allowLettersCheckBox;
+        private System.Windows.Forms.CheckBox allowDigitsCheckBox;
+        private System.Windows.Forms.CheckBox allowSymbolsCheckBox;
+        private System.Windows.Forms.Label label3;
     }
 }

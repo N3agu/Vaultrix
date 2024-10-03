@@ -10,7 +10,17 @@ namespace Vaultrix.Forms {
             InitializeComponent();
         }
 
+        private int failedLoginAttempts = 0;
+        private DateTime lockoutEndTime = DateTime.MinValue;
+
         private void loginButton_Click(object sender, EventArgs e) {
+            // check if user is locked out
+            if (DateTime.Now < lockoutEndTime) {
+                TimeSpan remainingLockout = lockoutEndTime - DateTime.Now;
+                MessageBox.Show($"Too many failed attempts! Please wait {remainingLockout.Minutes} minute(s) and {remainingLockout.Seconds} second(s) before trying again.", "Vaultrix | Locked Out", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string enteredVaultUsername = vaultUsernameTextBox.Text;
             string enteredVaultPassword = vaultPasswordTextBox.Text;
 
@@ -30,7 +40,19 @@ namespace Vaultrix.Forms {
             bool isVaultPasswordCorrect = PasswordHelper.ValidatePassword(enteredVaultPassword, keyFilePath);
 
             if (!isVaultPasswordCorrect) {
-                MessageBox.Show("Invalid password! Please try again.", "Vaultrix | Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                failedLoginAttempts++; // Increment failed attempts
+
+                if (failedLoginAttempts >= 5) {
+                    lockoutEndTime = DateTime.Now.AddMinutes(3); // 3 minute lockout after 5 failed attempts
+                    MessageBox.Show($"Too many failed attempts ({failedLoginAttempts.ToString()})! You are locked out for 3 minutes.", "Vaultrix | Locked Out", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (failedLoginAttempts >= 3) {
+                    lockoutEndTime = DateTime.Now.AddMinutes(1); // 1 minute lockout after 3 failed attempts
+                    MessageBox.Show($"Too many failed attempts ({failedLoginAttempts.ToString()})! You are locked out for 1 minute.", "Vaultrix | Locked Out", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show("Invalid password! Please try again.", "Vaultrix | Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 return;
             }
             

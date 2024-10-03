@@ -82,10 +82,10 @@
             // passwordStrengthLabel
             // 
             this.passwordStrengthLabel.AutoSize = true;
-            this.passwordStrengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.passwordStrengthLabel.Location = new System.Drawing.Point(10, 219);
+            this.passwordStrengthLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordStrengthLabel.Location = new System.Drawing.Point(9, 219);
             this.passwordStrengthLabel.Name = "passwordStrengthLabel";
-            this.passwordStrengthLabel.Size = new System.Drawing.Size(95, 15);
+            this.passwordStrengthLabel.Size = new System.Drawing.Size(91, 15);
             this.passwordStrengthLabel.TabIndex = 9;
             this.passwordStrengthLabel.Text = "Extremely Weak";
             // 
@@ -94,7 +94,7 @@
             this.passwordTipsLinkLabel.AutoSize = true;
             this.passwordTipsLinkLabel.Location = new System.Drawing.Point(226, 221);
             this.passwordTipsLinkLabel.Name = "passwordTipsLinkLabel";
-            this.passwordTipsLinkLabel.Size = new System.Drawing.Size(76, 13);
+            this.passwordTipsLinkLabel.Size = new System.Drawing.Size(80, 13);
             this.passwordTipsLinkLabel.TabIndex = 4;
             this.passwordTipsLinkLabel.TabStop = true;
             this.passwordTipsLinkLabel.Text = "Password Tips";
@@ -118,27 +118,27 @@
             this.viewVaultPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.viewVaultPasswordButton.Location = new System.Drawing.Point(277, 174);
             this.viewVaultPasswordButton.Name = "viewVaultPasswordButton";
-            this.viewVaultPasswordButton.Size = new System.Drawing.Size(25, 23);
+            this.viewVaultPasswordButton.Size = new System.Drawing.Size(25, 25);
             this.viewVaultPasswordButton.TabIndex = 3;
             this.viewVaultPasswordButton.UseVisualStyleBackColor = true;
             this.viewVaultPasswordButton.Click += new System.EventHandler(this.viewvaultPasswordButton_Click);
             // 
             // vaultPasswordTextBox
             // 
-            this.vaultPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.vaultPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaultPasswordTextBox.Location = new System.Drawing.Point(12, 174);
             this.vaultPasswordTextBox.Name = "vaultPasswordTextBox";
-            this.vaultPasswordTextBox.Size = new System.Drawing.Size(259, 23);
+            this.vaultPasswordTextBox.Size = new System.Drawing.Size(259, 25);
             this.vaultPasswordTextBox.TabIndex = 2;
             this.vaultPasswordTextBox.UseSystemPasswordChar = true;
             this.vaultPasswordTextBox.TextChanged += new System.EventHandler(this.vaultPasswordTextBox_TextChanged);
             // 
             // vaultUsernameTextBox
             // 
-            this.vaultUsernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.vaultUsernameTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaultUsernameTextBox.Location = new System.Drawing.Point(12, 145);
             this.vaultUsernameTextBox.Name = "vaultUsernameTextBox";
-            this.vaultUsernameTextBox.Size = new System.Drawing.Size(290, 23);
+            this.vaultUsernameTextBox.Size = new System.Drawing.Size(290, 25);
             this.vaultUsernameTextBox.TabIndex = 1;
             // 
             // Register
@@ -156,6 +156,7 @@
             this.Controls.Add(this.passwordStrengthProgressBar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Register";

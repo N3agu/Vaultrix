@@ -41,20 +41,20 @@
             // 
             // vaultPasswordTextBox
             // 
-            this.vaultPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.vaultPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaultPasswordTextBox.Location = new System.Drawing.Point(12, 174);
             this.vaultPasswordTextBox.Name = "vaultPasswordTextBox";
-            this.vaultPasswordTextBox.Size = new System.Drawing.Size(259, 23);
+            this.vaultPasswordTextBox.Size = new System.Drawing.Size(259, 25);
             this.vaultPasswordTextBox.TabIndex = 2;
             this.vaultPasswordTextBox.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(79, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 15);
+            this.label2.Size = new System.Drawing.Size(152, 15);
             this.label2.TabIndex = 13;
             this.label2.Text = "Enter your Vault Credentials";
             // 
@@ -86,7 +86,7 @@
             this.viewVaultPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.viewVaultPasswordButton.Location = new System.Drawing.Point(277, 174);
             this.viewVaultPasswordButton.Name = "viewVaultPasswordButton";
-            this.viewVaultPasswordButton.Size = new System.Drawing.Size(25, 23);
+            this.viewVaultPasswordButton.Size = new System.Drawing.Size(25, 25);
             this.viewVaultPasswordButton.TabIndex = 3;
             this.viewVaultPasswordButton.UseVisualStyleBackColor = true;
             this.viewVaultPasswordButton.Click += new System.EventHandler(this.viewvaultPasswordButton_Click);
@@ -103,10 +103,10 @@
             // 
             // vaultUsernameTextBox
             // 
-            this.vaultUsernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.vaultUsernameTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaultUsernameTextBox.Location = new System.Drawing.Point(12, 145);
             this.vaultUsernameTextBox.Name = "vaultUsernameTextBox";
-            this.vaultUsernameTextBox.Size = new System.Drawing.Size(290, 23);
+            this.vaultUsernameTextBox.Size = new System.Drawing.Size(290, 25);
             this.vaultUsernameTextBox.TabIndex = 1;
             // 
             // Login
@@ -121,6 +121,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.vaultPasswordTextBox);
             this.Controls.Add(this.pictureBox1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

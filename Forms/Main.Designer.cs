@@ -58,7 +58,10 @@
             this.emailColumnDisplayCheckBox = new System.Windows.Forms.CheckBox();
             this.nameColumnDisplayCheckBox = new System.Windows.Forms.CheckBox();
             this.dateColumnDisplayCheckBox = new System.Windows.Forms.CheckBox();
-            this.aboutTabPage = new System.Windows.Forms.TabPage();
+            this.licenseTabPage = new System.Windows.Forms.TabPage();
+            this.githubPageLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.rightClickSingleContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.visitWebsiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,13 +78,14 @@
             this.rightClickMultipleContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.showPasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hidePasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.passwordsTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.settingsTabPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.licenseTabPage.SuspendLayout();
             this.rightClickSingleContextMenu.SuspendLayout();
             this.rightClickMultipleContextMenu.SuspendLayout();
             this.SuspendLayout();
@@ -90,8 +94,9 @@
             // 
             this.tabControl1.Controls.Add(this.passwordsTabPage);
             this.tabControl1.Controls.Add(this.settingsTabPage);
-            this.tabControl1.Controls.Add(this.aboutTabPage);
+            this.tabControl1.Controls.Add(this.licenseTabPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -116,7 +121,7 @@
             // 
             this.searchComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.searchComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.searchComboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchComboBox.FormattingEnabled = true;
             this.searchComboBox.ItemHeight = 13;
             this.searchComboBox.Items.AddRange(new object[] {
@@ -164,17 +169,17 @@
             // versionLabel
             // 
             this.versionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.versionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.versionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.versionLabel.Location = new System.Drawing.Point(5, 339);
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(156, 18);
             this.versionLabel.TabIndex = 8;
-            this.versionLabel.Text = "version: 0.2A";
+            this.versionLabel.Text = "Version: 0.3A";
             this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // vaultNameLabel
             // 
-            this.vaultNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.vaultNameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaultNameLabel.Location = new System.Drawing.Point(5, 246);
             this.vaultNameLabel.Name = "vaultNameLabel";
             this.vaultNameLabel.Size = new System.Drawing.Size(156, 18);
@@ -184,7 +189,7 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutButton.Location = new System.Drawing.Point(5, 208);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(156, 35);
@@ -195,7 +200,7 @@
             // 
             // exportButton
             // 
-            this.exportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.exportButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportButton.Location = new System.Drawing.Point(5, 167);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(156, 35);
@@ -206,7 +211,7 @@
             // 
             // importButton
             // 
-            this.importButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.importButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.importButton.Location = new System.Drawing.Point(5, 126);
             this.importButton.Name = "importButton";
             this.importButton.Size = new System.Drawing.Size(156, 35);
@@ -217,7 +222,7 @@
             // 
             // addNewEntryButton
             // 
-            this.addNewEntryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.addNewEntryButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewEntryButton.Location = new System.Drawing.Point(5, 3);
             this.addNewEntryButton.Name = "addNewEntryButton";
             this.addNewEntryButton.Size = new System.Drawing.Size(156, 35);
@@ -228,7 +233,7 @@
             // 
             // modifyEntryButton
             // 
-            this.modifyEntryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.modifyEntryButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifyEntryButton.Location = new System.Drawing.Point(5, 85);
             this.modifyEntryButton.Name = "modifyEntryButton";
             this.modifyEntryButton.Size = new System.Drawing.Size(156, 35);
@@ -239,7 +244,7 @@
             // 
             // deleteEntryButton
             // 
-            this.deleteEntryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.deleteEntryButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteEntryButton.Location = new System.Drawing.Point(5, 44);
             this.deleteEntryButton.Name = "deleteEntryButton";
             this.deleteEntryButton.Size = new System.Drawing.Size(156, 35);
@@ -260,6 +265,7 @@
             this.passwordColumnHeader,
             this.linkColumnHeader,
             this.detailsColumnHeader});
+            this.entriesListView.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entriesListView.FullRowSelect = true;
             this.entriesListView.GridLines = true;
             this.entriesListView.HideSelection = false;
@@ -334,7 +340,7 @@
             this.detailsColumnDisplayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.detailsColumnDisplayCheckBox.Location = new System.Drawing.Point(78, 65);
             this.detailsColumnDisplayCheckBox.Name = "detailsColumnDisplayCheckBox";
-            this.detailsColumnDisplayCheckBox.Size = new System.Drawing.Size(58, 17);
+            this.detailsColumnDisplayCheckBox.Size = new System.Drawing.Size(61, 17);
             this.detailsColumnDisplayCheckBox.TabIndex = 5;
             this.detailsColumnDisplayCheckBox.Text = "Details";
             this.detailsColumnDisplayCheckBox.UseVisualStyleBackColor = true;
@@ -346,7 +352,7 @@
             this.linkColumnDisplayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.linkColumnDisplayCheckBox.Location = new System.Drawing.Point(78, 42);
             this.linkColumnDisplayCheckBox.Name = "linkColumnDisplayCheckBox";
-            this.linkColumnDisplayCheckBox.Size = new System.Drawing.Size(46, 17);
+            this.linkColumnDisplayCheckBox.Size = new System.Drawing.Size(47, 17);
             this.linkColumnDisplayCheckBox.TabIndex = 4;
             this.linkColumnDisplayCheckBox.Text = "Link";
             this.linkColumnDisplayCheckBox.UseVisualStyleBackColor = true;
@@ -358,7 +364,7 @@
             this.passwordColumnDisplayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.passwordColumnDisplayCheckBox.Location = new System.Drawing.Point(78, 19);
             this.passwordColumnDisplayCheckBox.Name = "passwordColumnDisplayCheckBox";
-            this.passwordColumnDisplayCheckBox.Size = new System.Drawing.Size(72, 17);
+            this.passwordColumnDisplayCheckBox.Size = new System.Drawing.Size(75, 17);
             this.passwordColumnDisplayCheckBox.TabIndex = 3;
             this.passwordColumnDisplayCheckBox.Text = "Password";
             this.passwordColumnDisplayCheckBox.UseVisualStyleBackColor = true;
@@ -370,7 +376,7 @@
             this.emailColumnDisplayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.emailColumnDisplayCheckBox.Location = new System.Drawing.Point(6, 65);
             this.emailColumnDisplayCheckBox.Name = "emailColumnDisplayCheckBox";
-            this.emailColumnDisplayCheckBox.Size = new System.Drawing.Size(51, 17);
+            this.emailColumnDisplayCheckBox.Size = new System.Drawing.Size(53, 17);
             this.emailColumnDisplayCheckBox.TabIndex = 2;
             this.emailColumnDisplayCheckBox.Text = "Email";
             this.emailColumnDisplayCheckBox.UseVisualStyleBackColor = true;
@@ -382,7 +388,7 @@
             this.nameColumnDisplayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.nameColumnDisplayCheckBox.Location = new System.Drawing.Point(6, 42);
             this.nameColumnDisplayCheckBox.Name = "nameColumnDisplayCheckBox";
-            this.nameColumnDisplayCheckBox.Size = new System.Drawing.Size(54, 17);
+            this.nameColumnDisplayCheckBox.Size = new System.Drawing.Size(55, 17);
             this.nameColumnDisplayCheckBox.TabIndex = 1;
             this.nameColumnDisplayCheckBox.Text = "Name";
             this.nameColumnDisplayCheckBox.UseVisualStyleBackColor = true;
@@ -394,19 +400,56 @@
             this.dateColumnDisplayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.dateColumnDisplayCheckBox.Location = new System.Drawing.Point(6, 19);
             this.dateColumnDisplayCheckBox.Name = "dateColumnDisplayCheckBox";
-            this.dateColumnDisplayCheckBox.Size = new System.Drawing.Size(49, 17);
+            this.dateColumnDisplayCheckBox.Size = new System.Drawing.Size(50, 17);
             this.dateColumnDisplayCheckBox.TabIndex = 0;
             this.dateColumnDisplayCheckBox.Text = "Date";
             this.dateColumnDisplayCheckBox.UseVisualStyleBackColor = true;
             // 
-            // aboutTabPage
+            // licenseTabPage
             // 
-            this.aboutTabPage.Location = new System.Drawing.Point(4, 22);
-            this.aboutTabPage.Name = "aboutTabPage";
-            this.aboutTabPage.Size = new System.Drawing.Size(676, 365);
-            this.aboutTabPage.TabIndex = 2;
-            this.aboutTabPage.Text = "About";
-            this.aboutTabPage.UseVisualStyleBackColor = true;
+            this.licenseTabPage.Controls.Add(this.githubPageLinkLabel);
+            this.licenseTabPage.Controls.Add(this.label2);
+            this.licenseTabPage.Controls.Add(this.label1);
+            this.licenseTabPage.Location = new System.Drawing.Point(4, 22);
+            this.licenseTabPage.Name = "licenseTabPage";
+            this.licenseTabPage.Size = new System.Drawing.Size(676, 365);
+            this.licenseTabPage.TabIndex = 2;
+            this.licenseTabPage.Text = "License";
+            this.licenseTabPage.UseVisualStyleBackColor = true;
+            // 
+            // githubPageLinkLabel
+            // 
+            this.githubPageLinkLabel.AutoSize = true;
+            this.githubPageLinkLabel.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.githubPageLinkLabel.Location = new System.Drawing.Point(6, 4);
+            this.githubPageLinkLabel.Name = "githubPageLinkLabel";
+            this.githubPageLinkLabel.Size = new System.Drawing.Size(69, 25);
+            this.githubPageLinkLabel.TabIndex = 2;
+            this.githubPageLinkLabel.TabStop = true;
+            this.githubPageLinkLabel.Text = "Vaultrix";
+            this.githubPageLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubPageLinkLabel_LinkClicked);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.label2.Location = new System.Drawing.Point(8, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(655, 326);
+            this.label2.TabIndex = 1;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.label1.Location = new System.Drawing.Point(67, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(311, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "- An Open-Source Password Manager";
             // 
             // rightClickSingleContextMenu
             // 
@@ -423,7 +466,7 @@
             // visitWebsiteToolStripMenuItem
             // 
             this.visitWebsiteToolStripMenuItem.Name = "visitWebsiteToolStripMenuItem";
-            this.visitWebsiteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.visitWebsiteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.visitWebsiteToolStripMenuItem.Text = "Visit Website";
             this.visitWebsiteToolStripMenuItem.Click += new System.EventHandler(this.visitWebsiteToolStripMenuItem_Click);
             // 
@@ -438,7 +481,7 @@
             this.linkToolStripMenuItem,
             this.detailsToolStripMenuItem});
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             // 
             // fullRowToolStripMenuItem
@@ -486,21 +529,21 @@
             // showPasswordToolStripMenuItem
             // 
             this.showPasswordToolStripMenuItem.Name = "showPasswordToolStripMenuItem";
-            this.showPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showPasswordToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.showPasswordToolStripMenuItem.Text = "Show Password";
             this.showPasswordToolStripMenuItem.Click += new System.EventHandler(this.showPasswordToolStripMenuItem_Click);
             // 
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.modifyToolStripMenuItem.Text = "Modify";
             this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem1
             // 
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
@@ -512,7 +555,7 @@
             this.hidePasswordsToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.rightClickMultipleContextMenu.Name = "rightClickContextMenu";
-            this.rightClickMultipleContextMenu.Size = new System.Drawing.Size(181, 114);
+            this.rightClickMultipleContextMenu.Size = new System.Drawing.Size(162, 92);
             // 
             // toolStripMenuItem1
             // 
@@ -527,6 +570,13 @@
             this.showPasswordsToolStripMenuItem.Text = "Show Passwords";
             this.showPasswordsToolStripMenuItem.Click += new System.EventHandler(this.showPasswordsToolStripMenuItem_Click);
             // 
+            // hidePasswordsToolStripMenuItem
+            // 
+            this.hidePasswordsToolStripMenuItem.Name = "hidePasswordsToolStripMenuItem";
+            this.hidePasswordsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.hidePasswordsToolStripMenuItem.Text = "Hide Passwords";
+            this.hidePasswordsToolStripMenuItem.Click += new System.EventHandler(this.hidePasswordsToolStripMenuItem_Click);
+            // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
@@ -534,19 +584,13 @@
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
-            // hidePasswordsToolStripMenuItem
-            // 
-            this.hidePasswordsToolStripMenuItem.Name = "hidePasswordsToolStripMenuItem";
-            this.hidePasswordsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hidePasswordsToolStripMenuItem.Text = "Hide Passwords";
-            this.hidePasswordsToolStripMenuItem.Click += new System.EventHandler(this.hidePasswordsToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 391);
             this.Controls.Add(this.tabControl1);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(700, 430);
             this.Name = "Main";
@@ -561,6 +605,8 @@
             this.settingsTabPage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.licenseTabPage.ResumeLayout(false);
+            this.licenseTabPage.PerformLayout();
             this.rightClickSingleContextMenu.ResumeLayout(false);
             this.rightClickMultipleContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -572,7 +618,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage passwordsTabPage;
         private System.Windows.Forms.TabPage settingsTabPage;
-        private System.Windows.Forms.TabPage aboutTabPage;
+        private System.Windows.Forms.TabPage licenseTabPage;
         private System.Windows.Forms.ListView entriesListView;
         private System.Windows.Forms.ColumnHeader nameColumnHeader;
         private System.Windows.Forms.ColumnHeader emailColumnHeader;
@@ -616,6 +662,9 @@
         private System.Windows.Forms.ToolStripMenuItem showPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showPasswordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hidePasswordsToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel githubPageLinkLabel;
     }
 }
 

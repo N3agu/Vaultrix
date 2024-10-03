@@ -2,10 +2,8 @@
 using System.Windows.Forms;
 using Vaultrix.Helpers;
 
-namespace Vaultrix.Forms
-{
-    public partial class EntryView : Form
-    {
+namespace Vaultrix.Forms {
+    public partial class EntryView : Form {
         public string WebsiteName {
             get { return websiteNameTextBox.Text; }
             set { websiteNameTextBox.Text = value; }
@@ -32,13 +30,13 @@ namespace Vaultrix.Forms
         }
 
         private void cancelButton_Click(object sender, EventArgs e) {
-            // Close the form without saving data
+            // close the form without saving data
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
         private void saveEntryButton_Click(object sender, EventArgs e) {
-            // Validate
+            // validate
             if(websiteNameTextBox.Text == string.Empty) {
                 MessageBox.Show("Website Name can not be empty.", "Error | Vaultrix", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -52,6 +50,19 @@ namespace Vaultrix.Forms
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void passwordTipsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            MessageBox.Show("Vault password should:\n- be at least 8 characters long (preferably 20);\n- contain at least 1 uppercase letter;\n- contain at least 1 digit;\n- contain at least one special character;\n\nVault password should score at least \"Strong\" to be created.", "Vaultrix | Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void generateButton_Click(object sender, EventArgs e) {
+            if(!allowLettersCheckBox.Checked && !allowDigitsCheckBox.Checked && !allowSymbolsCheckBox.Checked) {
+                MessageBox.Show("At least one character type should be allowed!", "Vaultrix | Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            passwordTextBox.Text = PasswordHelper.GenerateStrongPassword(allowLettersCheckBox.Checked, allowDigitsCheckBox.Checked, allowSymbolsCheckBox.Checked);
         }
     }
 }
