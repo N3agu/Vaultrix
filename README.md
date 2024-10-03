@@ -5,9 +5,11 @@ Vaultrix is a work in progress, open-source password manager built with C# and W
 
 ## Features
 - Create new vault
+- Lockdown on too many failed login attempts
 - Open vault
 - Add / Delete / Modify entry in vault
-- Import / Export vaults
+- Hied / Show column
+- Import / Export vaults (as ZIP file or as `.key` & `.vault` pair)
 - Log out
 - Vault password is hashed using DPAPI & PBKDF2
 - Vaults are encrypted using AES-256
@@ -24,7 +26,7 @@ Vaultrix is a work in progress, open-source password manager built with C# and W
 <img src="https://raw.githubusercontent.com/N3agu/Vaultrix/refs/heads/main/Images/Register.png">
 </details>
 <details closed>
-<summary>Modify Entry</summary>
+<summary>Add / Modify Entry</summary>
 <br>
 <img src="https://raw.githubusercontent.com/N3agu/Vaultrix/refs/heads/main/Images/Modify.png">
 </details>
